@@ -1,0 +1,155 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\title{Assignment 1}
+\author{CSE214 - Software Engineering Sessional\\
+  Md. Ashrafur Rahman Khan\\
+July 2025}
+\date{Due: 13 December 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Personal budget tracking is an essential skill in modern life, and well-designed software makes this task easier to maintain and extend. This assignment provides hands-on experience with refactoring real, working code to improve its quality without changing its behavior. You will identify recurring problems in the codebase and apply appropriate solutions to eliminate duplication and improve maintainability.
+
+\section{Project Overview}
+
+\subsection{What is BudgetBuddy?}
+
+BudgetBuddy is a command-line application for tracking personal expenses. It provides the following features:
+
+\begin{itemize}
+  \item Load CSV expense files
+  \item List and filter expenses
+  \item Generate monthly and category summaries
+  \item Export reports in plain text and HTML formats
+\end{itemize}
+
+The application is a real, runnable program with approximately 600 lines of code. It has no external dependencies and uses only pure Java SE.
+
+\subsection{Running the Application}
+
+First clone the repository from GitHub:
+\begin{verbatim}
+git clone https://github.com/risenfromashes/budgetbuddy
+cd budget-buddy
+\end{verbatim}
+
+Compile the application:
+\begin{verbatim}
+javac -d out src/**/*.java
+\end{verbatim}
+
+Run the application:
+\begin{verbatim}
+java -cp out Main data/expenses.csv
+\end{verbatim}
+
+Sample commands:
+\begin{itemize}
+  \item \texttt{load data/expenses.csv} - Load expense data
+  \item \texttt{list} - Display all expenses
+  \item \texttt{summary month 2025-02} - Show monthly summary
+  \item \texttt{export txt out/report.txt} - Export text report
+  \item \texttt{export html out/report.html} - Export HTML report
+\end{itemize}
+
+\subsection{Sample Data}
+
+The \texttt{data/expenses.csv} file contains 71 realistic expense entries with the format:
+\begin{verbatim}
+date;category;amount;notes
+2025-01-03;Food;520;Lunch at cafe
+2025-01-05;Transport;150;Uber
+\end{verbatim}
+
+\section{Code Structure}
+
+\subsection{Directory Layout}
+
+\begin{verbatim}
+src/
+  Main.java
+  model/
+    Expense.java
+  io/
+    CsvLoader.java
+    TxtReportWriter.java
+    HtmlReportWriter.java
+  service/
+    ExpenseRepository.java
+    Summarizer.java
+  cli/
+    Cli.java
+    CommandHandler.java
+  util/
+    DateUtils.java
+    TextUtils.java
+data/
+  expenses.csv
+out/
+  (compiled classes)
+\end{verbatim}
+
+\subsection{Key Classes}
+
+\begin{itemize}
+  \item \textbf{Expense}: Immutable data model (date, category, amount, notes)
+  \item \textbf{CsvLoader}: Parses CSV files into Expense objects
+  \item \textbf{ExpenseRepository}: In-memory storage for expenses
+  \item \textbf{Summarizer}: Computes monthly and category totals
+  \item \textbf{TxtReportWriter}: Generates plain-text reports with ASCII bars
+  \item \textbf{HtmlReportWriter}: Generates HTML reports with tables
+  \item \textbf{CommandHandler}: Processes CLI commands and coordinates services
+  \item \textbf{Cli}: Main command loop and user interaction
+  \item \textbf{DateUtils}: Date parsing and formatting helpers
+  \item \textbf{TextUtils}: Text formatting and ASCII visualization
+\end{itemize}
+
+\section{Design Issues}
+
+Recently the code has been reviewed by your friend who studied software engineering.
+They identified two issues  which you need to address in this assignment.
+
+\subsection{Issue 1: Redundant Object Creation}
+
+Some classes like the \texttt{ExpenseRepository} and \texttt{CsvLoader} are instantiated multiple times across different parts of the codebase.
+But they do the same thing. Is it efficient? Does it maintain a consistent state?
+
+\subsection{Issue 2: Duplicated Visualization Logic}
+The writer classes (\texttt{TxtReportWriter} and \texttt{HtmlReportWriter}) both implement
+similar logic to format and write the expense reports. Seperating formatting and writing logic might be better,
+while making sure that appropriate formatting is used for each case.
+
+\subsection{Objective}
+
+Your task is to refactor the BudgetBuddy codebase to eliminate the design issues described above while preserving all existing functionality.
+The refactored code must produce identical outputs to the original. You can use \texttt{TestHarness.java} to verify.
+
+\section{Submission}
+Submit a ZIP archive containing the entire refactored \texttt{src/} directory. Ensure that your code compiles and runs correctly.
+
+\section{Grading Rubric}
+
+\begin{tabular}{|p{6cm}|c|p{6cm}|}
+  \hline
+  \textbf{Criterion} & \textbf{Points} & \textbf{Details} \\
+  \hline
+  Correctness \& Functionality & 20 & Code compiles, all commands work, outputs match baseline, no regressions \\
+  \hline
+  Design Issue 1 Resolution & 40 &  Addressing the issue with the correct design pattern \\
+  \hline
+  Design Issue 2 Resolution & 40 & Addressing the issue with the correct design pattern \\
+  \hline
+  \textbf{TOTAL} & \textbf{100} & \\
+  \hline
+\end{tabular}
+
+\vspace{1em}
+
+\end{document}
