@@ -1,3 +1,2 @@
-# BUET CSE Sessional Materials
-Public repo for sessional Offline, Online and Practice materials
-by 2205026
+# Private Repo for classmat
+Storing offlines
