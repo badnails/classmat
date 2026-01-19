@@ -1,0 +1,134 @@
+\documentclass[11pt]{article}
+
+% Required Packages
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}       % For handling images
+\usepackage{amsmath}        % For math environments (cases, split, align)
+\usepackage{amssymb}        % For math symbols
+\usepackage{multirow}       % For table row spanning
+\usepackage{subcaption}     % For subfigures
+
+\title{CSE200: Online-1 on \LaTeX}
+\author{Your Name (Student ID)}
+\date{January 5, 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Technical reporting requires clarity and precision to ensure that information is communicated effectively. In this article, we demonstrate the integration of text, tables, equations, and figures to present structured and meaningful content. Proper use of headings, lists, and highlighted text helps organize ideas logically. Additionally, elements such as font variations, inline symbols $(x_{i},y_{j})$, and controlled spacing contribute to a professional and consistent document layout. In summary, a well-prepared technical document combines structured sections, accurate notation, and visual components to improve both readability and presentation quality.
+
+\section{Key Concepts}
+
+\subsection{Mixed and Nested Lists}
+\begin{enumerate}
+    \item Data Acquisition \\
+    Raw data collection
+    \begin{itemize}
+        \item Sensor-based measurements
+    \end{itemize}
+    \item Data Processing
+    \begin{itemize}
+        \item[z:] Noise removal
+        \item[y:] Feature extraction
+        \item[x:] Data normalization
+    \end{itemize}
+    \item Result Analysis
+    \begin{enumerate}
+        \item[(a)] Statistical evaluation
+        \item[(b)] Model validation
+        \begin{itemize}
+            \item Mean error calculation
+            \item Standard deviation analysis
+        \end{itemize}
+    \end{enumerate}
+\end{enumerate}
+
+\section{Mathematical Expressions}
+Mathematical representation is crucial. Consider these examples:
+
+\begin{equation}
+    E=mc^{2}+\frac{1}{2}kx^{2}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+    f(x) &= \sin(x)+\cos(x) \\
+         &= \sqrt{2}\sin(x+\frac{\pi}{4}) \quad I=\int_{0}^{\infty}e^{-t}dt=1
+\end{split}
+\end{equation}
+
+Piecewise function:
+\begin{equation}
+    h(t) = \begin{cases} 
+        t^{2} & \text{if } t < 0 \\ 
+        \sqrt{t} & \text{if } t \ge 0 
+    \end{cases}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+    y(x) &= \frac{1}{1+x^{2}}+\sum_{n=1}^{\infty}\frac{x^{n}}{n!} \\
+         &\quad -\ln(1+\frac{x^{3}}{3!})
+\end{split}
+\end{equation}
+
+\section{Tabular Representation}
+
+The following table:
+
+\begin{table}[h!]
+    \centering
+    \caption{Experimental Results}
+    \vspace{0.2cm}
+    \begin{tabular}{|l|c|c|l|}
+        \hline
+        \multirow{2}{*}{\textbf{Experiment}} & \multicolumn{2}{c|}{\textbf{Results}} & \multirow{2}{*}{\textbf{Remarks}} \\ \cline{2-3}
+         & \textbf{Trial 1} & \textbf{Trial 2} & \\ \hline
+        Test A & 82\% & 78\% & Acceptable \\ \hline
+        \multirow{2}{*}{Test B} & 91\% & 89\% & \multirow{2}{*}{Excellent} \\ 
+         & 93\% & 90\% & \\ \hline
+        Test C & 45\% & 50\% & Needs Improvement \\ \hline
+    \end{tabular}
+\end{table}
+
+\section{Figures}
+
+\subsection{Two-Row Subfigure Layout}
+
+\begin{figure}[h!]
+    \centering
+    % Top Row: Plot A and Plot C (As per the visual reference)
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image-a}
+        \caption{Plot A}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image-c}
+        \caption{Plot C}
+    \end{subfigure}
+    
+    \vspace{1em} % Space between rows
+    
+    % Bottom Row: Plot B (Centered)
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image-b}
+        \caption{Plot B}
+    \end{subfigure}
+    
+    \caption{Two-row arrangement: A and C on top, B centered below}
+    \label{fig:two_row}
+\end{figure}
+
+Figure \ref{fig:two_row} demonstrates side-by-side comparison of multiple visual outputs.
+
+\section{Conclusion}
+This document demonstrates proper structuring using \LaTeX\ with new content, equations, tables, and figures. Students should pay close attention to consistency, alignment, and formatting to achieve full marks.
+
+\end{document}

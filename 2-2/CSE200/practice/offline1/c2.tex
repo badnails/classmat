@@ -1,0 +1,123 @@
+\documentclass[11pt]{article}
+
+% Required Packages
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry} % Standard margins
+\usepackage{graphicx}       % For images
+\usepackage{amsmath}        % For math environments
+\usepackage{amssymb}        % For math symbols
+\usepackage{multirow}       % For table row spanning
+\usepackage{subcaption}     % For subfigures
+
+\title{CSE200: Online-1 on \LaTeX}
+\author{Your Name (Student ID)}
+\date{January 3, 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Document preparation systems are essential for producing structured and professional technical documents. \LaTeX\ allows authors to focus on content while maintaining consistent formatting. This article demonstrates formatted text, lists, equations, tables, and figures using commands taught in class.
+
+\subsection{Text Emphasis and Fonts}
+This sentence contains \textbf{bold text}, \textit{italic text}, \emph{emphasized text}, and \underline{underlined text}. Font sizes can also vary such as as {\Large Large text}, {\small small text}, and {\huge huge text}.
+
+\section{List Structures}
+
+\subsection{Mixed and Nested Lists}
+\begin{itemize}
+    \item Primary Feature
+    \item Secondary Features
+    \begin{enumerate}
+        \item Formatting control
+        \item Mathematical typesetting
+        \begin{itemize}
+            \item Inline math
+            \item Display math
+        \end{itemize}
+    \end{enumerate}
+\end{itemize}
+
+Note Lists can be customized.
+
+\section{Mathematical Modeling}
+Mathematical expressions are often used to represent data relationships. Consider variables $x_{i}$, $y,$ and $z^{2}$.
+
+\section{Mathematical Modeling}
+Mathematical expressions are commonly used to describe relationships among variables. Let the variables be $x_{i}$, $y_{j}$, and $\sigma^{2}$.
+
+\subsection{Displayed Equations}
+\begin{equation}
+    y_{j}=\alpha x_{j}^{2}+\beta x_{j}+\gamma
+\end{equation}
+
+\begin{equation}
+\begin{split}
+    T &= \sum_{i=1}^{n}(x_{i}-\mu)^{2} \\
+      &= \sum_{i=1}^{n}x_{i}^{2}-2\mu\sum_{i=1}^{n}x_{i}+n\mu^{2}
+\end{split}
+\end{equation}
+
+\begin{equation}
+    f(x_{i}) = \begin{cases} 
+        \frac{x_{i}^{2}}{\sigma^{2}} & \text{if } x_{i} \ge 0 \\ 
+        \frac{|x_{i}|}{\sigma} & \text{if } x_{i} < 0 
+    \end{cases}
+\end{equation}
+
+\section{Tabular Data Presentation}
+
+\begin{table}[h!]
+    \centering
+    \caption{Module-wise Performance Summary}
+    \vspace{0.2cm}
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \multirow{2}{*}{\textbf{Module}} & \multicolumn{2}{c|}{\textbf{Score}} \\ \cline{2-3}
+         & \textbf{Theory} & \textbf{Lab} \\ \hline
+        Module A & 75 & 80 \\ \hline
+        \multirow{2}{*}{Module B} & 88 & 90 \\ 
+         & 85 & 87 \\ \hline
+        Module C & 70 & 72 \\ \hline
+    \end{tabular}
+\end{table}
+
+\section{Visual Comparison}
+
+\subsection{Asymmetric Subfigure Layout}
+
+\begin{figure}[h!]
+    \centering
+    % Top Figure (A) - Centered
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image-a}
+        \caption{Main Diagram}
+    \end{subfigure}
+    
+    \vspace{1em} % Space between top and bottom row
+    
+    % Bottom Row (B and C)
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image-b}
+        \caption{Detail B}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image-c}
+        \caption{Detail C}
+    \end{subfigure}
+    
+    \caption{Asymmetric layout with one dominant figure}
+    \label{fig:asymmetric}
+\end{figure}
+
+Figure \ref{fig:asymmetric} illustrates how visual elements can be arranged systematically within a document.
+
+\section*{Conclusion}
+This article highlighted the importance of structured writing using \LaTeX. The use of formatted text, mathematical expressions, tables, and figures improves both readability and presentation quality.
+
+\end{document}
