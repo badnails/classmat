@@ -23,8 +23,6 @@ __pycache__/
 *.py[codz]
 *$py.class
 
-uv.lock
-
 .env
 .envrc
 .venv
