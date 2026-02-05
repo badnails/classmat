@@ -6,8 +6,10 @@ Repo for storing offline, online and practice mats
 
 Repo has two versions:
 
-1. [Public](https://github.com/badnails/classmat.git)
-2. [Private](https://github.com/badnails/classmat-private)
+- [Public](https://github.com/badnails/classmat.git)
+- [Private](https://github.com/badnails/classmat-private)
+
+---
 
 ## To setup after a clone:
 
@@ -16,6 +18,7 @@ Repo has two versions:
 git checkout -b <branch-name>  # create new branch
 git branch -m <branch-name>    # rename branch
 ```
+
 
 ### 2. Set the two remotes
 ```bash
@@ -37,5 +40,10 @@ git remote add <new-remote-name> <url>
    ```bash
    git branch --set-upstream-to=<remote-name>/<remote-branch-name>
    ```
+
+   >**Note:** If local and remote branch names differ, pushes may get rejected.
+   ```bash
+   git push -u <remote> <local-branch>:<remote-branch>
+   ```
    
-   *To check available remote branches: `git branch -r`*
+   
