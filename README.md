@@ -19,7 +19,6 @@ git checkout -b <branch-name>  # create new branch
 git branch -m <branch-name>    # rename branch
 ```
 
-
 ### 2. Set the two remotes
 ```bash
 git remote remove <remote-name>
