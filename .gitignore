@@ -11,7 +11,7 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
+#*.jar
 *.war
 
 
@@ -31,3 +31,5 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+.venv/

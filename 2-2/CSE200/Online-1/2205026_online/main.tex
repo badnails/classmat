@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{multirow, multicol}
+\usepackage{float}
+
+\title{CSE200: Online-1 on \LaTeX}
+\author{Arunavo Anirban Aikko (2205026)}
+\date{January 9, 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Effective technical writing demands \textbf{precision} and \textit{organization} to communicate ideas clearly. In this document, we illustrate how to combine \textbf{text},
+\textit{tables}, \underline{mathematical expressions}, and {\large figures} to convey information in a
+structured and readable way.\\
+Using \textbf{well-defined headings}, \textit{organized lists}, and \underline{emphasized keywords}
+helps readers navigate content efficiently. In addition, features such as font
+adjustments, inline notation ($a_i$, $b_j$), and thoughtful spacing enhance the {\large professional }appearance and consistency of the document.\\
+
+\textbf{Overall}, a properly formatted technical report integrates clear sections,
+accurate equations, and visual aids to maximize both \underline{readability} and presentation quality.
+
+\section{Key Concepts}
+\subsection{Nested and Mixed Lists Example}
+\begin{enumerate}
+    \item System Setup
+    \begin{itemize}
+        \item Install software packages
+        \item Run simulation
+        \item[!] Verify connections
+    \end{itemize}
+    \item Simulation Steps
+    \begin{enumerate}
+        \item[(a)] Initialize parameters
+\clearpage
+        \item[(b)] Run simulation
+        \begin{itemize}
+            \item Monitor CPU usage
+            \item Record intermediate results
+        \end{itemize}
+        \item[(c)] Analyze outputs 
+    \end{enumerate}
+    \item Reporting
+    \begin{itemize}
+        \item Prepare charts
+        \item Document observations
+        \item  Summarize findings
+        \begin{enumerate}
+            \item[(a)] Key Insights
+            \item[(b)] Recommendations
+        \end{enumerate}
+    \end{itemize}
+\end{enumerate}
+
+\section{Mathematical Expressions}
+Mathematical representation is crucial. Consider these examples:
+\begin{equation}
+    F=k\frac{q_1 q_2}{r^2}+\frac{1}{2}mv^2
+\end{equation}
+\begin{equation}
+    \begin{split}
+        g(x) &= e^x\cos(x) + ln(1+x) \\
+             &= \sqrt{e^{2x}+ln^2(1+x)}
+    \end{split}
+\end{equation}
+\begin{equation*}
+    J=\int_{0}^{1}x^3e^{-x}dx
+\end{equation*}
+Piecewise function:
+\begin{equation}
+    p(t) = \begin{cases}
+        \sin(t) & \text{if } 0 \le t \le \pi \\
+        \ln(t+1) & \text{if } t \ge \pi
+    \end{cases}
+\end{equation}
+\begin{equation}
+    \begin{split}
+        z(x) &= \sum_{n=0}^{\infty} \frac{(-1)^nx^{2n}}{(2n)!}+\frac{1}{x+1}\\
+             &\quad - \sqrt[3]{1+x^2}+\frac{\tan^{-1}(x)}{2}
+    \end{split}
+\end{equation}
+\clearpage
+\section{Experiment Summary Table}
+\begin{table}[H]
+    \centering
+    \vspace{0.2cm}
+    \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        \multirow{2}{*}{\textbf{Sample}} & \multicolumn{2}{|c|}{\textbf{Measurements}} & \multirow{2}{*}{\textbf{Status}} & \multirow{2}{*}{\textbf{Comments}} \\
+        \cline{2-3} 
+         & Voltage(V) & Current(A) & & \\ 
+        \hline
+        S1 & 5.2 & 0.8 & Pass & Stable \\ 
+        \hline
+        S2 & 4.9 & 0.7 & Pass & Slight fluctuation \\ 
+        \hline
+        \multirow{2}{*}{S3} & 3.8 & 0.6 & Fail & Low reading \\
+         & 3.9 & 0.65 & Re-test & Needs adjustment \\ \hline
+        S4 & 5.5 & 0.85 & Pass & Good consistency \\ \hline
+    \end{tabular}
+    \caption{Experimental Measurements with Multirow and Multicolumn Layout}
+\end{table}
+\end{document}
